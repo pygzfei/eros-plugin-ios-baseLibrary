@@ -41,6 +41,8 @@
     if (self.attributes[@"scrollEnabled"] && NO == [self.attributes[@"scrollEnabled"] boolValue]) {
         webview.scrollView.scrollEnabled = NO;
     }
+    
+    jsContext[@"mapData"] =self.attributes[@"mapData"];
 
 }
 
