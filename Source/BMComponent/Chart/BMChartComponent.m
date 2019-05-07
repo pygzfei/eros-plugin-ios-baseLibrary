@@ -11,6 +11,8 @@
 #import <WebKit/WebKit.h>
 #import "WXUtility.h"
 #import "YYModel.h"
+#import "BMNative.h"
+#import <JavaScriptCore/JavaScriptCore.h>
 
 
 NSString * const ChartInfo = @"options";
