@@ -74,7 +74,7 @@ NSString * const ChartInfo = @"options";
 /** 从工程中加载 html */
 - (void)loadHtmlFormBundle
 {
-    WXLogError("AAAAAAAAAAA");
+   WXLogError(@"%@","AAAAAAAAAA");
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"bm-chart" ofType:@"html"];
     NSString *htmlStr = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     [self.webview loadHTMLString:htmlStr baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
@@ -110,6 +110,9 @@ NSString * const ChartInfo = @"options";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    JSContext *jsContext = [self valueForKey:@"jsContext"];
+    BMNative *bmnative = [[BMNative alloc] init];
+    jsContext[@"bmnative"] = bmnative;
 }
 
 - (void)updateAttributes:(NSDictionary *)attributes
