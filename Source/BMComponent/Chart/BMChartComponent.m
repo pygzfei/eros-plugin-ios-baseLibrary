@@ -74,6 +74,7 @@ NSString * const ChartInfo = @"options";
 /** 从工程中加载 html */
 - (void)loadHtmlFormBundle
 {
+    WXLogError("AAAAAAAAAAA");
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"bm-chart" ofType:@"html"];
     NSString *htmlStr = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     [self.webview loadHTMLString:htmlStr baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
